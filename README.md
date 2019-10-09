@@ -13,7 +13,7 @@ Install on RaspberryPi
 
 First of all you have to install Python 3 and Kivy on your Raspberry Pi. 
 
-For this there  is a HowTo on the Kivy Homepage : 		
+For this there is a HowTo on the Kivy Homepage (takes a long time): 		
 
 	https://kivy.org/doc/stable/installation/installation-rpi.html
 
@@ -28,8 +28,18 @@ You can install all the requirements listed in the file `requirements.txt` by us
 Start Hector :
 
 	cd Hector9000
-	cd srv
+	cd src
 	python3 main.py
+
+If you had runed Hector the first time and your touchscreen is not working, you have to change the ~/.kivy/config.ini
+
+Go into the [input] section, remove the lines that are in there and put in:
+
+mouse = mouse
+mtdev_%(name)s = probesysfs,provider=mtdev
+hid_%(name)s = probesysfs,provider=hidinput
+
+
 
 Add Drinks
 ---
