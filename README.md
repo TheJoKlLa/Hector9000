@@ -35,9 +35,9 @@ If you had runed Hector the first time and your touchscreen is not working, you 
 
 Go into the [input] section, remove the lines that are in there and put in:
 
-mouse = mouse
-mtdev_%(name)s = probesysfs,provider=mtdev
-hid_%(name)s = probesysfs,provider=hidinput
+	mouse = mouse
+	mtdev_%(name)s = probesysfs,provider=mtdev
+	hid_%(name)s = probesysfs,provider=hidinput
 
 
 
