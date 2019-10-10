@@ -31,10 +31,10 @@ class HectorHardware:
         if not devEnvironment:
             GPIO.setmode(GPIO.BOARD)
 
-            hx1 = cfg["hx711"]["CLK"]
-            hx2 = cfg["hx711"]["DAT"]
+            hx1 = cfg["hx711"]["DAT"]
+            hx2 = cfg["hx711"]["CLK"]
             hxref = cfg["hx711"]["ref"]
-            self.hx = HX711(hx1, hx2)
+            self.hx = HX711(dout=hx1, pd_sck=hx2)
             self.hx.set_reading_format("LSB", "MSB")
             self.hx.set_reference_unit(hxref)
             self.hx.reset()
